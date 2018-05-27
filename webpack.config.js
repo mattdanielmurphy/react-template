@@ -1,17 +1,13 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
   entry: './src/index.jsx',
-  devServer: {
-    contentBase: path.join(__dirname, 'public')
-  },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
   output: {
     path: path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
@@ -44,5 +40,17 @@ module.exports = {
         ]
       }
     ]
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    })
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx']
   }
 }

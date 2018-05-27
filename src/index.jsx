@@ -1,8 +1,8 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import App from "./components/app"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import AppRouter from './routers/AppRouter'
 
-import "normalize.css"
-import "./styles/styles.scss"
+import 'normalize.css'
+import './styles/styles.scss'
 
-ReactDOM.render(<App />, document.getElementById("app"))
+ReactDOM.render(<AppRouter />, document.getElementById('app'))
