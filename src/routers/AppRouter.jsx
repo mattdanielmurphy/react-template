@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -8,10 +8,8 @@ import {
 } from 'react-router-dom'
 
 import Header from '../components/Header'
-
-const Portfolio = props => <p>Portfolio{console.log(props)}</p>
-const Home = () => <p>Home</p>
-const NotFound = () => <p>404: Page not found</p>
+import Home from '../components/Home'
+import NotFound from '../components/NotFound'
 
 const AppRouter = () => (
   <Router>
@@ -19,8 +17,6 @@ const AppRouter = () => (
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/portfolio/:id" component={Portfolio} />
         <Route component={NotFound} />
       </Switch>
     </div>
